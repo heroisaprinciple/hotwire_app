@@ -1,0 +1,36 @@
+<h1> AAAAAAAA </h1>
+
+<p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+
+<%= link_to 'Go to page 2', page2_path %>
+
+<%= form_with url: page3_path do |form| %>
+  <%= form.submit 'Submit form', class: 'p-2 mt-5 bg-gray-600' %>
+<% end %>
+
+<%= turbo_frame_tag 'page4-image', class: 'block bg-green-100 mt-5 p-5' do %>
+  <%= link_to 'Load Image', page4_path, data: { turbo_frame: 'page4-image-response' } %>
+<% end  %>
+
+<%= turbo_frame_tag 'page4-text', class: 'block bg-blue-100 mt-10 p-5' do %>
+  <%= link_to 'Load text', page4_path %>
+<% end %>
+
+<%= turbo_frame_tag 'page4-image-response', class: 'block bg-yellow-100 mt-5 p-5' %>
+
+<%= turbo_frame_tag 'page4-image-cat', src: '/page4', class: 'block bg-red-100 mt-5 p-5' %>
+
+<div data-controller="colors" class="mt-5" data-controller-reset-class="bg-white">
+  <input type='text' autocomplete="off"
+         placeholder="type html color"
+  data-colors-target="input">
+  <button class="gb-gray-200 border border-black" data-action="colors#colorizeCard">Color it</button>
+
+  <button class="gb-red-600 border border-black" data-action="colors#resetCard">Reset card</button>
+
+  <div class="border border-black w-32 h-32 rounded mt-5"
+  data-colors-target="card">
+  </div>
+
+  <p class="mt-2 text-sm" data-colors-target="message">Color not changed</p>
+</div>
