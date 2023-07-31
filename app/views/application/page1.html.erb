@@ -1,11 +1,9 @@
-<h1> AAAAAAAA </h1>
-
-<p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+<h1> Page 1 </h1>
 
 <%= link_to 'Go to page 2', page2_path %>
 
 <%= form_with url: page3_path do |form| %>
-  <%= form.submit 'Submit form', class: 'p-2 mt-5 bg-gray-600' %>
+  <%= form.submit 'Submit form to go to page 3', class: 'p-2 mt-5 bg-gray-600' %>
 <% end %>
 
 <%= turbo_frame_tag 'page4-image', class: 'block bg-green-100 mt-5 p-5' do %>
